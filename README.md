@@ -13,6 +13,12 @@ jpm build
 jpm install
 ```
 
+## Usage
+
+Simply run `ix` without any arguments to spawn a repl (read–eval–print loop)
+environment, or pass in a file as an argument `ix <file>` evaluate the entire
+file.
+
 ## Features
 
 The idea for `ix` is simple: you have a stack, and are given primitives to
