@@ -48,7 +48,3 @@
     (when (= b 0)
       (error "Modulo by zero"))
     (push (% a b))))
-
-(defn print-top []
-  (when (empty? stack)
-    (error "Stack empty")) (print (peek)) nil)

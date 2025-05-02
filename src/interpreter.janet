@@ -10,11 +10,12 @@
         "*" (stack/multiply)
         "+" (stack/add)
         "-" (stack/subtract)
+        "." (print (stack/pop))
         "/" (stack/divide)
         "drop" (stack/drop)
         "dup" (stack/dup)
         "over" (stack/over)
-        "print" (stack/print-top)
+        "print" (print (stack/peek))
         "rot" (stack/rot)
         "swap" (stack/swap)
         (if-let [num (scan-number token)]
