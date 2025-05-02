@@ -48,3 +48,21 @@
     (when (= b 0)
       (error "Modulo by zero"))
     (push (% a b))))
+
+(defn equal []
+  (let [b (pop) a (pop)] (push (if (= a b) 1 0))))
+
+(defn not-equal []
+  (let [b (pop) a (pop)] (push (if (not= a b) 1 0))))
+
+(defn greater-than []
+  (let [b (pop) a (pop)] (push (if (> a b) 1 0))))
+
+(defn less-than []
+  (let [b (pop) a (pop)] (push (if (< a b) 1 0))))
+
+(defn greater-or-equal []
+  (let [b (pop) a (pop)] (push (if (>= a b) 1 0))))
+
+(defn less-or-equal []
+  (let [b (pop) a (pop)] (push (if (<= a b) 1 0))))

@@ -6,12 +6,18 @@
   (each token tokens
     (when (not (empty? token))
       (case token
+        "!=" (stack/not-equal)
         "%" (stack/modulo)
         "*" (stack/multiply)
         "+" (stack/add)
         "-" (stack/subtract)
         "." (print (stack/pop))
         "/" (stack/divide)
+        "<" (stack/less-than)
+        "<=" (stack/less-or-equal)
+        "==" (stack/equal)
+        ">" (stack/greater-than)
+        ">=" (stack/greater-or-equal)
         "drop" (stack/drop)
         "dup" (stack/dup)
         "over" (stack/over)
