@@ -1,0 +1,4 @@
+(import ix)
+
+(defn main [& args]
+  (ix/main ;args))

@@ -34,7 +34,7 @@
 (defn subtract []
   (let [b (pop) a (pop)] (push (- a b))))
 
-(defn multiply [] 
+(defn multiply []
   (let [b (pop) a (pop)] (push (* a b))))
 
 (defn divide []
@@ -48,43 +48,3 @@
     (when (= b 0)
       (error "Modulo by zero"))
     (push (% a b))))
-
-(defn interpret [code]
-  (def tokens (string/split " " (string/trim code)))
-  
-  (each token tokens
-    (case token
-      "%" (modulo)
-      "*" (multiply)
-      "+" (add)
-      "-" (subtract)
-      "/" (divide)
-      "drop" (drop)
-      "dup" (dup)
-      "over" (over)
-      "rot" (rot)
-      "swap" (swap)
-      (if-let [num (scan-number token)]
-        (push num)
-        (error (string "invalid token: " token))))))
-
-(defn repl []
-  (while true
-    (def stack-str 
-      (if (empty? stack)
-        "<>" (string "<" (string/join (map string stack) " ") ">")))
-
-    (print "stack: " stack-str)
-
-    (prinf "> ")
-
-    (def input (string/trim (file/read stdin :line)))
-
-    (when (= input "exit")
-      (break))
-
-    (try
-      (interpret input)
-      ([err] (eprint "error: %s" err)))))
-
-(repl)
