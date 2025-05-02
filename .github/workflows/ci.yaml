@@ -1,0 +1,38 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  all:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Install dependencies
+        run: |
+          brew update
+          brew install janet
+          brew install ripgrep
+
+      - name: Install dependencies
+        run: jpm deps
+
+      - name: Check for forbidden words
+        run: |
+          ./bin/forbid
+
+      - name: Run tests
+        run: jpm test
+
+      - name: Build project
+        run: jpm build
+
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: ix-build
+          path: build/
