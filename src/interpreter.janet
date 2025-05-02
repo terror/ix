@@ -1,9 +1,7 @@
 (import ./stack)
 
 (defn interpret [code]
-  (def code-with-spaces (string/replace-all "\n" " " code))
-
-  (def tokens (string/split " " (string/trim code-with-spaces)))
+  (def tokens (string/split " " (string/trim (string/replace-all "\n" " " code))))
 
   (each token tokens
     (when (not (empty? token))
@@ -24,9 +22,5 @@
           (error (string "invalid token: " token)))))))
 
 (defn interpret-file [filename]
-  (try
     (let [content (string/trim (slurp filename))]
-      (interpret content))
-    ([err]
-     (eprint "error interpreting file: " err)
-     (os/exit 1))))
+      (interpret content)))

@@ -11,5 +11,8 @@
     (repl/repl)
     (let [filename (first rest)]
       (if (file-exists? filename)
-        (interpreter/interpret-file filename)
+        (try
+          (interpreter/interpret-file filename)
+          ([err]
+            (eprintf "error interpreting file %s: %s" filename err)))
         (eprintf "error: file %s does not exist" filename)))))
