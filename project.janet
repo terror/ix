@@ -1,6 +1,6 @@
 (declare-project
   :name "ix"
-  :description "A stack-based language implementation in Janet"
+  :description "A stack-based concatenative programming language"
   :version "0.1.0"
   :dependencies [
     "https://github.com/janet-lang/spork.git"
