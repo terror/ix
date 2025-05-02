@@ -3,6 +3,7 @@ set dotenv-load
 export EDITOR := 'nvim'
 
 alias b := build
+alias f := fmt
 alias r := run
 alias t := test
 
@@ -11,6 +12,9 @@ default:
 
 build:
   jpm build
+
+fmt:
+  janet-format --files */*.janet
 
 run *args:
   @janet src/main.janet {{ args }}

@@ -22,5 +22,5 @@
           (error (string "invalid token: " token)))))))
 
 (defn interpret-file [filename]
-    (let [content (string/trim (slurp filename))]
-      (interpret content)))
+  (let [content (string/trim (slurp filename))]
+    (interpret content)))
