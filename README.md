@@ -28,5 +28,6 @@ mutate the stack.
 
 ## Prior Art
 
-The [stack oriented programming](https://en.wikipedia.org/wiki/Stack-oriented_programming)
+- The `Factor` language, a dynamically typed language based on the concatenative paradigm. See [a panoramic tour of Factor](https://andreaferretti.github.io/factor-tutorial/) as well.
+- The [stack oriented programming](https://en.wikipedia.org/wiki/Stack-oriented_programming)
 wikipedia page.
