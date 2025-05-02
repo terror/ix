@@ -8,4 +8,4 @@ default:
   just --list
 
 run *args:
-  @janet main.janet {{ args }}
+  @janet ix.janet {{ args }}
