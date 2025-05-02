@@ -1,5 +1,7 @@
 ## ix
 
+[![CI](https://github.com/terror/ix/actions/workflows/ci.yaml/badge.svg)](https://github.com/terror/ix/actions/workflows/ci.yaml)
+
 **ix** is an interpreter for a stack-based programming language,
 written entirely in [**janet**](https://janet-lang.org/).
 
