@@ -11,7 +11,10 @@ default:
   just --list
 
 build:
-  jpm build
+  jpm clean && jpm build
+
+install: build
+  jpm install
 
 fmt:
   janet-format --files */*.janet
